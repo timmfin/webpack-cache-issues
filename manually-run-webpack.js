@@ -104,9 +104,11 @@ exec('./restore.sh', function(error, stdout, stderr) {
   }
 
 
-  // exampleThatDoesntWork();
+  exampleThatDoesntWork();
+
+  // Related, but different issue to ^^^
+  // anotherExampleThatDoesntWork();
   // exampleThatDoesWork();
-  anotherExampleThatDoesntWork();
 });
 
 

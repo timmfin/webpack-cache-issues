@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+  - "4.1"
+
+before_install:
+  - npm --version
+
+before_script:
+  - npm ls
+
+script:
+  - ! node ./scripts/fs-precision-and-builtTimestamp-drift-issue.js && echo "Yup, it failed"
+  - ! node ./scripts/cached-fs-not-purged-early-enough.js && echo "Yup, it failed"
+  - node ./scripts/cached-fs-not-purged-early-enough-but-works-with-another-run.js && echo "Yup, it succeded"

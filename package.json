@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A small demo project that shows how to use webpack for client-side development in ECMAScript 6.",
   "scripts": {
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "fs-precision-and-builtTimestamp-drift-issue": "node ./scripts/fs-precision-and-builtTimestamp-drift-issue.js",
+    "cached-fs-not-purged-early-enough": "node ./scripts/cached-fs-not-purged-early-enough.js",
+    "cached-fs-not-purged-early-enough-but-works-with-another-run": "node ./scripts/cached-fs-not-purged-early-enough-but-works-with-another-run.js"
   },
   "devDependencies": {
     "babel-core": "^6.0.20",

@@ -9,15 +9,15 @@ A small demo project to illustrate some webpack caching problems (related to and
 
 ## Usage
 
-* Run `node manually-run-webpack.js` to replicate the error.
-* Look at `manually-run-webpack.js` to see some comments explaining the issue and commented out functions to illustrate other problems.
+* Run `node scripts/fs-precision-and-builtTimestamp-drift-issue.js` to replicate the first issue.
+* Run `node scripts/cached-fs-not-purged-early-enough.js` to replicate the second issue.
 
 ## Example output of main issue
 
 Where the buildTimestamp can "drift" too far away from the mtime when you are directly using the Webpack node API and files will keep being cached that shouldn't. And note, includes some helpful logging of webpack internals.
 
 ```
-± node ./manually-run-webpack.js
+± node scripts/fs-precision-and-builtTimestamp-drift-issue.js
 Restoring es6/Point.js
 Restoring es6/other-small-thing.js
 
@@ -114,7 +114,7 @@ So the build incorrectly cached things ✗
 ## Example of other issue (CachedInputFileSystem isn't purged before the CachePlugin does its thing)
 
 ```
-± node ./manually-run-webpack.js
+± node scripts/cached-fs-not-purged-early-enough.js
 Restoring es6/Point.js
 Restoring es6/other-small-thing.js
 

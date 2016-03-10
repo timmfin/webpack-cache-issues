@@ -2,10 +2,13 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './es6/main.js',
+    entry: {
+        'main': './es6/main.js',
+        'other': './es6/other-small-thing.js',
+    },
     output: {
         path: __dirname,
-        filename: 'bundle.js'
+        filename: '[name]-bundle.js'
     },
     module: {
         loaders: [
@@ -18,14 +21,17 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        // Avoid publishing files when compilation fails
-        new webpack.NoErrorsPlugin()
-    ],
-    stats: {
-        // Nice colored output
-        colors: true
+    // stats: {
+    //     // Nice colored output
+    //     colors: false,
+    //     cached: true,
+    //     timings: true
+    // },
+    resolve: {
+      extensions: ['', '.js']
     },
+    cache: true
+
     // Create Sourcemaps for the bundle
-    devtool: 'source-map',
+    // devtool: 'source-map',
 };

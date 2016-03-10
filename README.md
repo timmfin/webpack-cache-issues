@@ -1,4 +1,4 @@
-# webpack caching issues demo
+# webpack caching issues demo  [![Build Status](https://travis-ci.org/timmfin/webpack-cache-issues.svg?branch=master)](https://travis-ci.org/timmfin/webpack-cache-issues)
 
 A small demo project to illustrate some webpack caching problems (related to and beyond https://github.com/webpack/webpack/issues/2003). Some actual webpack test case for these issues are in progress at https://github.com/timmfin/webpack/blob/mtime-for-caching/test/Compiler-caching.test.js.
 

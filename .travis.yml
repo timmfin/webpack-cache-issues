@@ -10,6 +10,6 @@ before_script:
   - npm ls
 
 script:
-  - ! node ./scripts/fs-precision-and-builtTimestamp-drift-issue.js && echo "Yup, it failed"
-  - ! node ./scripts/cached-fs-not-purged-early-enough.js && echo "Yup, it failed"
+  - if node ./scripts/fs-precision-and-builtTimestamp-drift-issue.js ; then echo "Oh, it shouldn't succeed (at least on a mac with second-level fs precision)"; echo "Yup, it failed"; fi
+  - if node ./scripts/cached-fs-not-purged-early-enough.js ; then echo "Oh, it shouldn't succeed"; echo "Yup, it failed"; fi
   - node ./scripts/cached-fs-not-purged-early-enough-but-works-with-another-run.js && echo "Yup, it succeded"
